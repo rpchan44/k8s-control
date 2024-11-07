@@ -3,4 +3,3 @@ resources:
   - service.yaml
   - ingress.yaml
   - configmap.yaml
-  - nginx-ingress-controller.yaml
