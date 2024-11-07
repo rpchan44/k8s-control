@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/rpchan44/k8s-control.git
     targetRevision: HEAD
-    path: overlays/dev
+    path: overlays/prod
   destination:
     server: https://kubernetes.default.svc
     namespace: production
