@@ -1,0 +1,8 @@
+spec:
+  replicas: 3
+  revisionHistoryLimit: 4
+  template:
+    spec:
+      containers:
+        - name: my-app
+          image: "rpchan44/webapp:v1.0-dev"

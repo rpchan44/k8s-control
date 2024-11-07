@@ -1,0 +1,31 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: app-ingress-template ### inherit from base
+  annotations:
+    kubernetes.io/ingress.class: nginx
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/session-cookie-name: "ingress-prod"
+    nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
+    nginx.ingress.kubernetes.io/session-cookie-max-age: "3200"
+    cert-manager.io/issuer-name: letsencrypt
+    cert-manager.io/issuer-kind: ClusterIssuer
+spec:
+  tls:
+  - hosts:
+    - prod-demo-apps.tcmrlaw.com
+    secretName: app-tls
+  ingressClassName: nginx
+  rules:
+    - host: prod-demo-apps.tcmrlaw.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: webapp-service
+                port:
+                  number: 80
+
