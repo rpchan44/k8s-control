@@ -30,5 +30,5 @@ spec:
               service:
                 name: dev-webapp-service
                 port:
-                  number: 80
+                  number: 5000
 
