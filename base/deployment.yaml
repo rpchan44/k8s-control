@@ -17,14 +17,7 @@ spec:
           image: webapp:latest
           ports:
             - containerPort: 5000
-          livenessProbe:
-            httpGet:
-              path: /
-              port: 5000   # Port your app listens on (use 80 if it's a production app)
-            initialDelaySeconds: 10  # Delay before starting the probe
-            periodSeconds: 5        # How often the probe is performed
-            failureThreshold: 3      # After 3 failures, the container will be restarted
-            successThreshold: 1     
+              
           envFrom:
             - configMapRef:
                 name: configmap
