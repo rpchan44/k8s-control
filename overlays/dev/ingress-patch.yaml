@@ -9,6 +9,9 @@ metadata:
     nginx.ingress.kubernetes.io/session-cookie-name: "ingress-dev"
     nginx.ingress.kubernetes.io/session-cookie-expires: "172800"
     nginx.ingress.kubernetes.io/session-cookie-max-age: "3200"
+    nginx.ingress.kubernetes.io/proxy-read-timeout: "600"
+    nginx.ingress.kubernetes.io/proxy-send-timeout: "600"
+
     cert-manager.io/issuer-name: letsencrypt
     cert-manager.io/issuer-kind: ClusterIssuer
 spec:
