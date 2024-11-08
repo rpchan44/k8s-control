@@ -12,7 +12,7 @@ configMapGenerator:
   - name: configmap
     behavior: replace
     literals:
-      - version=rpchan44/webapp-dev:main-cee60c53be3423dcedb6f0b715b8f0a4465c2c22
+      - version=rpchan44/webapp-dev:main-8f4b81367f02a6e1c0bf9b3d246f61da6936489c
     envs:
       - config.properties
 
